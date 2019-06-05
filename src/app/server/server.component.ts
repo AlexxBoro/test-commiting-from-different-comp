@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
 
 export class ServerComponent {
  allowNewServer = false;
+ serverCreation = 'no server was created';
+ nazwa = 'jakas nazwa';
+ serverName = '';
 
  constructor() {
   setTimeout(() => {
@@ -16,7 +19,14 @@ export class ServerComponent {
   }, 2000);
  }
 
- nazwa = 'jakas nazwa';
+ onCreateServer() {
+    this.serverCreation = 'server WAS created';
+ }
+
+ onUpdateServerName(event: any) {
+  this.serverName = (<HTMLInputElement>event.target).value;
+}
+
 }
 
 

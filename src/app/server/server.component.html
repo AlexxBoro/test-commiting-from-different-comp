@@ -1,2 +1,9 @@
 <h2>I am the server component nazwa: {{ nazwa }}</h2>
-<button class="btn btn-primary" [disabled]="!allowNewServer">guzik w komponencie server - property binding</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">guzik w komponencie server - property binding</button>
+<p>see boolean value of allowNewServer changing - string interpolation: {{ allowNewServer }}</p>
+<p>see boolean value of allowNewServer changing - prop binding:</p>
+<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreation }}</p>
+<label>{{ serverName }}</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+
