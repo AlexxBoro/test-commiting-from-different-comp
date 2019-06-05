@@ -15,7 +15,18 @@
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 <p>to way databinding przez ngModel: {{ serverName }}</p>
 <br>
+<div class="frame">
+    <p *ngIf="serverCreated; else noServer">hello, you clicked the button so there is a new thing added to the dom (ngIf directive) {{ serverName }}</p>
+    <ng-template #noServer>
+        <p>this is rendered because server has not been created, if you click the button something will replace this content (ng-template)</p>
+    </ng-template>
+</div>
+
+<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
 <br>
+<p *ngFor='let server of servers'>jakis paragraf zeby pocwiczyc ngFor</p>
+<br>
+
 
 <div class="container">
   <div class="row">
