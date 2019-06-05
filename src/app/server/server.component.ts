@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 })
 
 export class ServerComponent {
+ allowNewServer = false;
+
+ constructor() {
+  setTimeout(() => {
+    this.allowNewServer = true;
+  }, 2000);
+ }
+
  nazwa = 'jakas nazwa';
 }
 
