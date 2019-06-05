@@ -12,6 +12,8 @@ export class ServerComponent {
  serverCreation = 'no server was created';
  nazwa = 'jakas nazwa';
  serverName = '';
+ username = '';
+ clickableButtonEnabled = false;
 
  constructor() {
   setTimeout(() => {
@@ -20,7 +22,7 @@ export class ServerComponent {
  }
 
  onCreateServer() {
-    this.serverCreation = 'server WAS created';
+    this.serverCreation = 'server WAS created and the name is:' + this.serverName;
  }
 
  onUpdateServerName(event: any) {

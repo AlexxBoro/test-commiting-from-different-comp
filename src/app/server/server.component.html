@@ -1,9 +1,34 @@
-<h2>I am the server component nazwa: {{ nazwa }}</h2>
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">guzik w komponencie server - property binding</button>
-<p>see boolean value of allowNewServer changing - string interpolation: {{ allowNewServer }}</p>
+<h2>I am the server component nazwa: {{ serverName }}</h2>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+  guzik w komponencie server - property binding
+</button>
+<p>
+  see boolean value of allowNewServer changing - string interpolation:
+  {{ allowNewServer }}
+</p>
 <p>see boolean value of allowNewServer changing - prop binding:</p>
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreation }}</p>
-<label>{{ serverName }}</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<label>Server name:</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<p>{{ serverName }}</p>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<p>to way databinding przez ngModel: {{ serverName }}</p>
+<br>
+<br>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <p>assignment, databinding:</p>
+        <label>update your username:</label>
+        <input type="text" class="form-control" [(ngModel)]="username" />
+        <p>the username is: {{ username }}</p>
+        <p>green button is clickable only if the username is not na empty string and clears the input field</p>
+        <button class="btn btn-success" [disabled]="username === ''" (click)="username = ''">reset input field</button>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
